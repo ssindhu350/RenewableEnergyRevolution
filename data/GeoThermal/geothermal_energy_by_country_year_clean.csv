@@ -1,0 +1,661 @@
+country,year,capacity_mw,technology,capacity_factor,twh_per_year,country_code
+Argentina,2000,0.6,geothermal,0.8,0.0042048,ARG
+Argentina,2001,0.6,geothermal,0.8,0.0042048,ARG
+Argentina,2002,0.6,geothermal,0.8,0.0042048,ARG
+Argentina,2003,0.6,geothermal,0.8,0.0042048,ARG
+Argentina,2004,0.6,geothermal,0.8,0.0042048,ARG
+Argentina,2005,0.6,geothermal,0.8,0.0042048,ARG
+Argentina,2006,0.6,geothermal,0.8,0.0042048,ARG
+Argentina,2007,0.6,geothermal,0.8,0.0042048,ARG
+Argentina,2008,0.6,geothermal,0.8,0.0042048,ARG
+Australia,2000,0.2,geothermal,0.8,0.0014016,AUS
+Australia,2001,0.2,geothermal,0.8,0.0014016,AUS
+Australia,2002,0.2,geothermal,0.8,0.0014016,AUS
+Australia,2003,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2004,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2005,0.2,geothermal,0.8,0.0014016,AUS
+Australia,2006,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2007,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2008,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2009,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2010,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2011,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2012,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2013,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2014,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2015,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2016,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2017,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2018,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2019,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2020,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2021,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2022,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2023,0.1,geothermal,0.8,0.0007008,AUS
+Australia,2024,0.1,geothermal,0.8,0.0007008,AUS
+Austria,2002,2.0,geothermal,0.8,0.014016,AUT
+Austria,2003,2.0,geothermal,0.8,0.014016,AUT
+Austria,2004,2.0,geothermal,0.8,0.014016,AUT
+Austria,2005,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2006,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2007,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2008,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2009,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2010,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2011,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2012,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2013,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2014,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2015,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2016,0.924,geothermal,0.8,0.006475392,AUT
+Austria,2017,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2018,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2019,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2020,0.915,geothermal,0.8,0.00641232,AUT
+Austria,2021,0.25,geothermal,0.8,0.001752,AUT
+Austria,2022,0.25,geothermal,0.8,0.001752,AUT
+Austria,2023,0.25,geothermal,0.8,0.001752,AUT
+Austria,2024,0.25,geothermal,0.8,0.001752,AUT
+Chile,2017,24.0,geothermal,0.8,0.168192,CHL
+Chile,2018,39.7,geothermal,0.8,0.2782176,CHL
+Chile,2019,39.7,geothermal,0.8,0.2782176,CHL
+Chile,2020,39.7,geothermal,0.8,0.2782176,CHL
+Chile,2021,51.4,geothermal,0.8,0.3602112,CHL
+Chile,2022,83.37,geothermal,0.8,0.58425696,CHL
+Chile,2023,83.58,geothermal,0.8,0.58572864,CHL
+Chile,2024,83.58,geothermal,0.8,0.58572864,CHL
+China,2000,21.65,geothermal,0.8,0.1517232,CHN
+China,2001,21.65,geothermal,0.8,0.1517232,CHN
+China,2002,21.65,geothermal,0.8,0.1517232,CHN
+China,2003,21.65,geothermal,0.8,0.1517232,CHN
+China,2004,21.65,geothermal,0.8,0.1517232,CHN
+China,2005,21.65,geothermal,0.8,0.1517232,CHN
+China,2006,21.65,geothermal,0.8,0.1517232,CHN
+China,2007,21.65,geothermal,0.8,0.1517232,CHN
+China,2008,24.75,geothermal,0.8,0.173448,CHN
+China,2009,24.75,geothermal,0.8,0.173448,CHN
+China,2010,24.05,geothermal,0.8,0.1685424,CHN
+China,2011,26.15,geothermal,0.8,0.1832592,CHN
+China,2012,26.15,geothermal,0.8,0.1832592,CHN
+China,2013,25.95,geothermal,0.8,0.1818576,CHN
+China,2014,25.95,geothermal,0.8,0.1818576,CHN
+China,2015,25.75,geothermal,0.8,0.180456,CHN
+China,2016,25.75,geothermal,0.8,0.180456,CHN
+China,2017,25.75,geothermal,0.8,0.180456,CHN
+China,2018,25.75,geothermal,0.8,0.180456,CHN
+China,2019,25.75,geothermal,0.8,0.180456,CHN
+China,2020,25.75,geothermal,0.8,0.180456,CHN
+China,2021,25.75,geothermal,0.8,0.180456,CHN
+China,2022,25.75,geothermal,0.8,0.180456,CHN
+China,2023,25.75,geothermal,0.8,0.180456,CHN
+China,2024,25.75,geothermal,0.8,0.180456,CHN
+Costa Rica,2000,144.71,geothermal,0.8,1.01412768,CRI
+Costa Rica,2001,144.71,geothermal,0.8,1.01412768,CRI
+Costa Rica,2002,144.71,geothermal,0.8,1.01412768,CRI
+Costa Rica,2003,162.71,geothermal,0.8,1.14027168,CRI
+Costa Rica,2004,165.71,geothermal,0.8,1.1612956800000005,CRI
+Costa Rica,2005,165.711,geothermal,0.8,1.161302688,CRI
+Costa Rica,2006,165.711,geothermal,0.8,1.161302688,CRI
+Costa Rica,2007,165.711,geothermal,0.8,1.161302688,CRI
+Costa Rica,2008,165.711,geothermal,0.8,1.161302688,CRI
+Costa Rica,2009,165.711,geothermal,0.8,1.161302688,CRI
+Costa Rica,2010,165.711,geothermal,0.8,1.161302688,CRI
+Costa Rica,2011,217.461,geothermal,0.8,1.523966688,CRI
+Costa Rica,2012,217.461,geothermal,0.8,1.523966688,CRI
+Costa Rica,2013,217.461,geothermal,0.8,1.523966688,CRI
+Costa Rica,2014,217.461,geothermal,0.8,1.523966688,CRI
+Costa Rica,2015,217.361,geothermal,0.8,1.523265888,CRI
+Costa Rica,2016,206.86,geothermal,0.8,1.4496748800000003,CRI
+Costa Rica,2017,206.86,geothermal,0.8,1.4496748800000003,CRI
+Costa Rica,2018,206.86,geothermal,0.8,1.4496748800000003,CRI
+Costa Rica,2019,261.86,geothermal,0.8,1.8351148800000003,CRI
+Costa Rica,2020,261.86,geothermal,0.8,1.8351148800000003,CRI
+Costa Rica,2021,258.84,geothermal,0.8,1.81395072,CRI
+Costa Rica,2022,262.66,geothermal,0.8,1.8407212800000003,CRI
+Costa Rica,2023,262.66,geothermal,0.8,1.8407212800000003,CRI
+Costa Rica,2024,262.66,geothermal,0.8,1.8407212800000003,CRI
+Croatia,2018,10.0,geothermal,0.8,0.07008,HRV
+Croatia,2019,10.0,geothermal,0.8,0.07008,HRV
+Croatia,2020,10.0,geothermal,0.8,0.07008,HRV
+Croatia,2021,10.0,geothermal,0.8,0.07008,HRV
+Croatia,2022,10.0,geothermal,0.8,0.07008,HRV
+Croatia,2023,10.0,geothermal,0.8,0.07008,HRV
+Croatia,2024,10.0,geothermal,0.8,0.07008,HRV
+El Salvador,2000,161.24,geothermal,0.8,1.1299699200000002,SLV
+El Salvador,2001,161.24,geothermal,0.8,1.1299699200000002,SLV
+El Salvador,2002,161.24,geothermal,0.8,1.1299699200000002,SLV
+El Salvador,2003,161.24,geothermal,0.8,1.1299699200000002,SLV
+El Salvador,2004,151.24,geothermal,0.8,1.0598899200000005,SLV
+El Salvador,2005,151.24,geothermal,0.8,1.0598899200000005,SLV
+El Salvador,2006,151.24,geothermal,0.8,1.0598899200000005,SLV
+El Salvador,2007,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2008,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2009,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2010,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2011,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2012,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2013,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2014,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2015,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2016,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2017,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2018,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2019,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2020,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2021,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2022,204.44,geothermal,0.8,1.4327155200000004,SLV
+El Salvador,2023,209.4,geothermal,0.8,1.4674752000000002,SLV
+El Salvador,2024,209.4,geothermal,0.8,1.4674752000000002,SLV
+Ethiopia,2000,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2001,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2002,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2003,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2004,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2005,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2006,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2007,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2008,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2009,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2010,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2011,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2012,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2013,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2014,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2015,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2016,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2017,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2018,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2019,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2020,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2021,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2022,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2023,7.3,geothermal,0.8,0.0511584,ETH
+Ethiopia,2024,7.3,geothermal,0.8,0.0511584,ETH
+France,2011,14.9,geothermal,0.8,0.1044192,FRA
+France,2012,13.5,geothermal,0.8,0.094608,FRA
+France,2013,15.0,geothermal,0.8,0.10512,FRA
+France,2014,15.0,geothermal,0.8,0.10512,FRA
+France,2015,14.75,geothermal,0.8,0.103368,FRA
+France,2016,16.15,geothermal,0.8,0.1131792,FRA
+France,2017,16.15,geothermal,0.8,0.1131792,FRA
+France,2018,16.15,geothermal,0.8,0.1131792,FRA
+France,2019,16.15,geothermal,0.8,0.1131792,FRA
+France,2020,16.15,geothermal,0.8,0.1131792,FRA
+France,2021,16.15,geothermal,0.8,0.1131792,FRA
+France,2022,16.15,geothermal,0.8,0.1131792,FRA
+France,2023,16.15,geothermal,0.8,0.1131792,FRA
+France,2024,16.15,geothermal,0.8,0.1131792,FRA
+Germany,2004,0.2,geothermal,0.8,0.0014016,DEU
+Germany,2005,0.2,geothermal,0.8,0.0014016,DEU
+Germany,2006,0.2,geothermal,0.8,0.0014016,DEU
+Germany,2007,3.0,geothermal,0.8,0.021024,DEU
+Germany,2008,3.0,geothermal,0.8,0.021024,DEU
+Germany,2009,6.0,geothermal,0.8,0.042048,DEU
+Germany,2010,7.0,geothermal,0.8,0.049056,DEU
+Germany,2011,6.0,geothermal,0.8,0.042048,DEU
+Germany,2012,16.0,geothermal,0.8,0.112128,DEU
+Germany,2013,26.0,geothermal,0.8,0.182208,DEU
+Germany,2014,29.0,geothermal,0.8,0.203232,DEU
+Germany,2015,29.0,geothermal,0.8,0.203232,DEU
+Germany,2016,33.0,geothermal,0.8,0.231264,DEU
+Germany,2017,32.0,geothermal,0.8,0.224256,DEU
+Germany,2018,35.0,geothermal,0.8,0.24528,DEU
+Germany,2019,40.0,geothermal,0.8,0.28032,DEU
+Germany,2020,40.0,geothermal,0.8,0.28032,DEU
+Germany,2021,46.0,geothermal,0.8,0.322368,DEU
+Germany,2022,52.0,geothermal,0.8,0.364416,DEU
+Germany,2023,52.0,geothermal,0.8,0.364416,DEU
+Germany,2024,44.0,geothermal,0.8,0.308352,DEU
+Guadeloupe,2000,4.0,geothermal,0.8,0.028032,GLP
+Guadeloupe,2001,4.0,geothermal,0.8,0.028032,GLP
+Guadeloupe,2002,4.0,geothermal,0.8,0.028032,GLP
+Guadeloupe,2003,4.0,geothermal,0.8,0.028032,GLP
+Guadeloupe,2004,4.0,geothermal,0.8,0.028032,GLP
+Guadeloupe,2005,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2006,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2007,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2008,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2009,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2010,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2011,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2012,13.5,geothermal,0.8,0.094608,GLP
+Guadeloupe,2013,13.5,geothermal,0.8,0.094608,GLP
+Guadeloupe,2014,11.5,geothermal,0.8,0.080592,GLP
+Guadeloupe,2015,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2016,15.0,geothermal,0.8,0.10512,GLP
+Guadeloupe,2017,15.0,geothermal,0.8,0.10512,GLP
+Guadeloupe,2018,14.7,geothermal,0.8,0.1030175999999999,GLP
+Guadeloupe,2019,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2020,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2021,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2022,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2023,14.5,geothermal,0.8,0.101616,GLP
+Guadeloupe,2024,14.5,geothermal,0.8,0.101616,GLP
+Guatemala,2000,29.0,geothermal,0.8,0.203232,GTM
+Guatemala,2001,24.0,geothermal,0.8,0.168192,GTM
+Guatemala,2002,24.0,geothermal,0.8,0.168192,GTM
+Guatemala,2003,24.0,geothermal,0.8,0.168192,GTM
+Guatemala,2004,26.5,geothermal,0.8,0.185712,GTM
+Guatemala,2005,24.0,geothermal,0.8,0.168192,GTM
+Guatemala,2006,24.0,geothermal,0.8,0.168192,GTM
+Guatemala,2007,42.02,geothermal,0.8,0.29447616,GTM
+Guatemala,2008,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2009,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2010,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2011,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2012,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2013,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2014,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2015,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2016,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2017,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2018,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2019,52.0,geothermal,0.8,0.364416,GTM
+Guatemala,2020,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2021,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2022,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2023,49.2,geothermal,0.8,0.3447936,GTM
+Guatemala,2024,49.2,geothermal,0.8,0.3447936,GTM
+Honduras,2017,35.0,geothermal,0.8,0.24528,HND
+Honduras,2018,35.0,geothermal,0.8,0.24528,HND
+Honduras,2019,35.0,geothermal,0.8,0.24528,HND
+Honduras,2020,39.0,geothermal,0.8,0.273312,HND
+Honduras,2021,39.0,geothermal,0.8,0.273312,HND
+Honduras,2022,39.0,geothermal,0.8,0.273312,HND
+Honduras,2023,39.0,geothermal,0.8,0.273312,HND
+Honduras,2024,39.0,geothermal,0.8,0.273312,HND
+Hungary,2017,3.0,geothermal,0.8,0.021024,HUN
+Hungary,2018,3.0,geothermal,0.8,0.021024,HUN
+Hungary,2019,3.0,geothermal,0.8,0.021024,HUN
+Hungary,2020,3.0,geothermal,0.8,0.021024,HUN
+Hungary,2021,3.0,geothermal,0.8,0.021024,HUN
+Hungary,2022,3.0,geothermal,0.8,0.021024,HUN
+Hungary,2023,3.0,geothermal,0.8,0.021024,HUN
+Hungary,2024,3.0,geothermal,0.8,0.021024,HUN
+Iceland,2000,172.0,geothermal,0.8,1.205376,ISL
+Iceland,2001,202.0,geothermal,0.8,1.4156160000000002,ISL
+Iceland,2002,202.0,geothermal,0.8,1.4156160000000002,ISL
+Iceland,2003,202.0,geothermal,0.8,1.4156160000000002,ISL
+Iceland,2004,202.0,geothermal,0.8,1.4156160000000002,ISL
+Iceland,2005,232.0,geothermal,0.8,1.6258560000000002,ISL
+Iceland,2006,422.0,geothermal,0.8,2.957376,ISL
+Iceland,2007,485.0,geothermal,0.8,3.39888,ISL
+Iceland,2008,575.0,geothermal,0.8,4.0296,ISL
+Iceland,2009,575.0,geothermal,0.8,4.0296,ISL
+Iceland,2010,575.0,geothermal,0.8,4.0296,ISL
+Iceland,2011,665.0,geothermal,0.8,4.66032,ISL
+Iceland,2012,665.0,geothermal,0.8,4.66032,ISL
+Iceland,2013,665.0,geothermal,0.8,4.66032,ISL
+Iceland,2014,665.0,geothermal,0.8,4.66032,ISL
+Iceland,2015,665.0,geothermal,0.8,4.66032,ISL
+Iceland,2016,665.0,geothermal,0.8,4.66032,ISL
+Iceland,2017,709.958,geothermal,0.8,4.975385664,ISL
+Iceland,2018,755.558,geothermal,0.8,5.294950464,ISL
+Iceland,2019,755.558,geothermal,0.8,5.294950464,ISL
+Iceland,2020,756.158,geothermal,0.8,5.299155264,ISL
+Iceland,2021,756.208,geothermal,0.8,5.299505664,ISL
+Iceland,2022,757.58,geothermal,0.8,5.309120640000001,ISL
+Iceland,2023,787.58,geothermal,0.8,5.51936064,ISL
+Iceland,2024,787.58,geothermal,0.8,5.51936064,ISL
+Indonesia,2000,525.0,geothermal,0.8,3.6792,IDN
+Indonesia,2001,785.0,geothermal,0.8,5.50128,IDN
+Indonesia,2002,785.0,geothermal,0.8,5.50128,IDN
+Indonesia,2003,805.0,geothermal,0.8,5.64144,IDN
+Indonesia,2004,820.0,geothermal,0.8,5.74656,IDN
+Indonesia,2005,850.0,geothermal,0.8,5.9568,IDN
+Indonesia,2006,850.0,geothermal,0.8,5.9568,IDN
+Indonesia,2007,980.0,geothermal,0.8,6.86784,IDN
+Indonesia,2008,1052.0,geothermal,0.8,7.372416,IDN
+Indonesia,2009,1189.0,geothermal,0.8,8.332512,IDN
+Indonesia,2010,1189.0,geothermal,0.8,8.332512,IDN
+Indonesia,2011,1226.0,geothermal,0.8,8.591808,IDN
+Indonesia,2012,1336.0,geothermal,0.8,9.362688,IDN
+Indonesia,2013,1343.5,geothermal,0.8,9.415248,IDN
+Indonesia,2014,1403.5,geothermal,0.8,9.835728,IDN
+Indonesia,2015,1438.3,geothermal,0.8,10.0796064,IDN
+Indonesia,2016,1533.3,geothermal,0.8,10.7453664,IDN
+Indonesia,2017,1808.3,geothermal,0.8,12.6725664,IDN
+Indonesia,2018,1948.3,geothermal,0.8,13.6536864,IDN
+Indonesia,2019,2130.7,geothermal,0.8,14.9319456,IDN
+Indonesia,2020,2130.7,geothermal,0.8,14.9319456,IDN
+Indonesia,2021,2286.05,geothermal,0.8,16.0206384,IDN
+Indonesia,2022,2360.33,geothermal,0.8,16.541192640000002,IDN
+Indonesia,2023,2597.51,geothermal,0.8,18.203350080000003,IDN
+Indonesia,2024,2638.8,geothermal,0.8,18.492710400000004,IDN
+Italy,2000,590.0,geothermal,0.8,4.13472,ITA
+Italy,2001,573.0,geothermal,0.8,4.0155840000000005,ITA
+Italy,2002,666.0,geothermal,0.8,4.667328000000001,ITA
+Italy,2003,707.0,geothermal,0.8,4.954656,ITA
+Italy,2004,642.0,geothermal,0.8,4.499136,ITA
+Italy,2005,671.0,geothermal,0.8,4.702368000000001,ITA
+Italy,2006,671.0,geothermal,0.8,4.702368000000001,ITA
+Italy,2007,671.0,geothermal,0.8,4.702368000000001,ITA
+Italy,2008,671.0,geothermal,0.8,4.702368000000001,ITA
+Italy,2009,695.0,geothermal,0.8,4.87056,ITA
+Italy,2010,728.0,geothermal,0.8,5.101824,ITA
+Italy,2011,728.0,geothermal,0.8,5.101824,ITA
+Italy,2012,728.0,geothermal,0.8,5.101824,ITA
+Italy,2013,729.0,geothermal,0.8,5.108832,ITA
+Italy,2014,768.0,geothermal,0.8,5.382144000000001,ITA
+Italy,2015,768.0,geothermal,0.8,5.382144000000001,ITA
+Italy,2016,767.0,geothermal,0.8,5.375136,ITA
+Italy,2017,767.19,geothermal,0.8,5.37646752,ITA
+Italy,2018,767.19,geothermal,0.8,5.37646752,ITA
+Italy,2019,767.19,geothermal,0.8,5.37646752,ITA
+Italy,2020,771.79,geothermal,0.8,5.40870432,ITA
+Italy,2021,771.79,geothermal,0.8,5.40870432,ITA
+Italy,2022,771.79,geothermal,0.8,5.40870432,ITA
+Italy,2023,771.79,geothermal,0.8,5.40870432,ITA
+Italy,2024,771.79,geothermal,0.8,5.40870432,ITA
+Japan,2000,533.0,geothermal,0.8,3.735264,JPN
+Japan,2001,533.0,geothermal,0.8,3.735264,JPN
+Japan,2002,533.0,geothermal,0.8,3.735264,JPN
+Japan,2003,535.0,geothermal,0.8,3.74928,JPN
+Japan,2004,535.0,geothermal,0.8,3.74928,JPN
+Japan,2005,535.0,geothermal,0.8,3.74928,JPN
+Japan,2006,532.0,geothermal,0.8,3.728256,JPN
+Japan,2007,532.0,geothermal,0.8,3.728256,JPN
+Japan,2008,532.0,geothermal,0.8,3.728256,JPN
+Japan,2009,535.0,geothermal,0.8,3.74928,JPN
+Japan,2010,537.0,geothermal,0.8,3.763296,JPN
+Japan,2011,537.0,geothermal,0.8,3.763296,JPN
+Japan,2012,512.0,geothermal,0.8,3.588096,JPN
+Japan,2013,512.0,geothermal,0.8,3.588096,JPN
+Japan,2014,508.0,geothermal,0.8,3.560064000000001,JPN
+Japan,2015,516.0,geothermal,0.8,3.616128,JPN
+Japan,2016,526.0,geothermal,0.8,3.686208,JPN
+Japan,2017,471.366,geothermal,0.8,3.303332928,JPN
+Japan,2018,473.115,geothermal,0.8,3.3155899200000003,JPN
+Japan,2019,480.714,geothermal,0.8,3.3688437120000003,JPN
+Japan,2020,487.004,geothermal,0.8,3.4129240320000003,JPN
+Japan,2021,486.814,geothermal,0.8,3.411592512,JPN
+Japan,2022,436.814,geothermal,0.8,3.0611925120000003,JPN
+Japan,2023,456.054,geothermal,0.8,3.196026432,JPN
+Japan,2024,489.054,geothermal,0.8,3.427290432,JPN
+Kenya,2000,58.0,geothermal,0.8,0.406464,KEN
+Kenya,2001,58.0,geothermal,0.8,0.406464,KEN
+Kenya,2002,58.0,geothermal,0.8,0.406464,KEN
+Kenya,2003,58.0,geothermal,0.8,0.406464,KEN
+Kenya,2004,128.0,geothermal,0.8,0.897024,KEN
+Kenya,2005,128.0,geothermal,0.8,0.897024,KEN
+Kenya,2006,128.0,geothermal,0.8,0.897024,KEN
+Kenya,2007,128.0,geothermal,0.8,0.897024,KEN
+Kenya,2008,128.0,geothermal,0.8,0.897024,KEN
+Kenya,2009,163.0,geothermal,0.8,1.142304,KEN
+Kenya,2010,198.0,geothermal,0.8,1.387584,KEN
+Kenya,2011,198.0,geothermal,0.8,1.387584,KEN
+Kenya,2012,205.5,geothermal,0.8,1.440144,KEN
+Kenya,2013,205.5,geothermal,0.8,1.440144,KEN
+Kenya,2014,366.1,geothermal,0.8,2.5656288000000003,KEN
+Kenya,2015,618.9,geothermal,0.8,4.3372512,KEN
+Kenya,2016,652.9,geothermal,0.8,4.5755232,KEN
+Kenya,2017,672.9,geothermal,0.8,4.7156832,KEN
+Kenya,2018,683.8,geothermal,0.8,4.792070399999999,KEN
+Kenya,2019,683.8,geothermal,0.8,4.792070399999999,KEN
+Kenya,2020,863.13,geothermal,0.8,6.04881504,KEN
+Kenya,2021,863.13,geothermal,0.8,6.04881504,KEN
+Kenya,2022,949.73,geothermal,0.8,6.655707840000001,KEN
+Kenya,2023,984.73,geothermal,0.8,6.900987840000001,KEN
+Kenya,2024,939.73,geothermal,0.8,6.585627840000001,KEN
+Mexico,2000,843.0,geothermal,0.8,5.907744000000001,MEX
+Mexico,2001,843.0,geothermal,0.8,5.907744000000001,MEX
+Mexico,2002,853.0,geothermal,0.8,5.977824000000001,MEX
+Mexico,2003,953.0,geothermal,0.8,6.678624000000001,MEX
+Mexico,2004,953.0,geothermal,0.8,6.678624000000001,MEX
+Mexico,2005,953.0,geothermal,0.8,6.678624000000001,MEX
+Mexico,2006,953.0,geothermal,0.8,6.678624000000001,MEX
+Mexico,2007,958.0,geothermal,0.8,6.7136640000000005,MEX
+Mexico,2008,958.0,geothermal,0.8,6.7136640000000005,MEX
+Mexico,2009,958.0,geothermal,0.8,6.7136640000000005,MEX
+Mexico,2010,883.0,geothermal,0.8,6.188064000000001,MEX
+Mexico,2011,808.0,geothermal,0.8,5.662464000000001,MEX
+Mexico,2012,833.0,geothermal,0.8,5.837664000000001,MEX
+Mexico,2013,858.0,geothermal,0.8,6.012864000000001,MEX
+Mexico,2014,868.0,geothermal,0.8,6.082944000000001,MEX
+Mexico,2015,898.0,geothermal,0.8,6.293184000000001,MEX
+Mexico,2016,923.5,geothermal,0.8,6.471888000000001,MEX
+Mexico,2017,948.5,geothermal,0.8,6.647088000000001,MEX
+Mexico,2018,948.5,geothermal,0.8,6.647088000000001,MEX
+Mexico,2019,973.5,geothermal,0.8,6.822288000000001,MEX
+Mexico,2020,973.5,geothermal,0.8,6.822288000000001,MEX
+Mexico,2021,998.5,geothermal,0.8,6.997488000000001,MEX
+Mexico,2022,998.5,geothermal,0.8,6.997488000000001,MEX
+Mexico,2023,998.5,geothermal,0.8,6.997488000000001,MEX
+Mexico,2024,998.5,geothermal,0.8,6.997488000000001,MEX
+New Zealand,2000,418.0,geothermal,0.8,2.9293440000000004,NZL
+New Zealand,2001,417.0,geothermal,0.8,2.922336,NZL
+New Zealand,2002,372.0,geothermal,0.8,2.606976,NZL
+New Zealand,2003,382.0,geothermal,0.8,2.677056,NZL
+New Zealand,2004,382.0,geothermal,0.8,2.677056,NZL
+New Zealand,2005,437.0,geothermal,0.8,3.062496,NZL
+New Zealand,2006,437.0,geothermal,0.8,3.062496,NZL
+New Zealand,2007,456.0,geothermal,0.8,3.195648,NZL
+New Zealand,2008,578.0,geothermal,0.8,4.050624000000001,NZL
+New Zealand,2009,617.0,geothermal,0.8,4.323936,NZL
+New Zealand,2010,742.0,geothermal,0.8,5.199936,NZL
+New Zealand,2011,742.0,geothermal,0.8,5.199936,NZL
+New Zealand,2012,768.0,geothermal,0.8,5.382144000000001,NZL
+New Zealand,2013,840.0,geothermal,0.8,5.88672,NZL
+New Zealand,2014,966.0,geothermal,0.8,6.769728000000001,NZL
+New Zealand,2015,990.0,geothermal,0.8,6.93792,NZL
+New Zealand,2016,985.0,geothermal,0.8,6.90288,NZL
+New Zealand,2017,985.0,geothermal,0.8,6.90288,NZL
+New Zealand,2018,1009.0,geothermal,0.8,7.071072,NZL
+New Zealand,2019,1009.0,geothermal,0.8,7.071072,NZL
+New Zealand,2020,1043.0,geothermal,0.8,7.309344000000001,NZL
+New Zealand,2021,1043.0,geothermal,0.8,7.309344000000001,NZL
+New Zealand,2022,1050.0,geothermal,0.8,7.3584,NZL
+New Zealand,2023,1050.0,geothermal,0.8,7.3584,NZL
+New Zealand,2024,1275.4,geothermal,0.8,8.9380032,NZL
+Nicaragua,2000,70.0,geothermal,0.8,0.49056,NIC
+Nicaragua,2001,70.0,geothermal,0.8,0.49056,NIC
+Nicaragua,2002,77.5,geothermal,0.8,0.54312,NIC
+Nicaragua,2003,77.5,geothermal,0.8,0.54312,NIC
+Nicaragua,2004,77.5,geothermal,0.8,0.54312,NIC
+Nicaragua,2005,87.5,geothermal,0.8,0.6132,NIC
+Nicaragua,2006,87.5,geothermal,0.8,0.6132,NIC
+Nicaragua,2007,87.5,geothermal,0.8,0.6132,NIC
+Nicaragua,2008,87.5,geothermal,0.8,0.6132,NIC
+Nicaragua,2009,87.5,geothermal,0.8,0.6132,NIC
+Nicaragua,2010,87.5,geothermal,0.8,0.6132,NIC
+Nicaragua,2011,87.5,geothermal,0.8,0.6132,NIC
+Nicaragua,2012,164.5,geothermal,0.8,1.152816,NIC
+Nicaragua,2013,154.5,geothermal,0.8,1.082736,NIC
+Nicaragua,2014,154.5,geothermal,0.8,1.082736,NIC
+Nicaragua,2015,154.5,geothermal,0.8,1.082736,NIC
+Nicaragua,2016,154.5,geothermal,0.8,1.082736,NIC
+Nicaragua,2017,154.5,geothermal,0.8,1.082736,NIC
+Nicaragua,2018,154.5,geothermal,0.8,1.082736,NIC
+Nicaragua,2019,153.24,geothermal,0.8,1.07390592,NIC
+Nicaragua,2020,153.24,geothermal,0.8,1.07390592,NIC
+Nicaragua,2021,153.24,geothermal,0.8,1.07390592,NIC
+Nicaragua,2022,165.44,geothermal,0.8,1.15940352,NIC
+Nicaragua,2023,165.44,geothermal,0.8,1.15940352,NIC
+Nicaragua,2024,165.44,geothermal,0.8,1.15940352,NIC
+Papua New Guinea,2003,6.0,geothermal,0.8,0.042048,PNG
+Papua New Guinea,2004,6.0,geothermal,0.8,0.042048,PNG
+Papua New Guinea,2005,36.0,geothermal,0.8,0.252288,PNG
+Papua New Guinea,2006,36.0,geothermal,0.8,0.252288,PNG
+Papua New Guinea,2007,56.0,geothermal,0.8,0.3924480000000001,PNG
+Papua New Guinea,2008,56.0,geothermal,0.8,0.3924480000000001,PNG
+Papua New Guinea,2009,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2010,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2011,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2012,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2013,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2014,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2015,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2016,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2017,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2018,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2019,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2020,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2021,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2022,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2023,50.0,geothermal,0.8,0.3504,PNG
+Papua New Guinea,2024,51.0,geothermal,0.8,0.357408,PNG
+Philippines,2000,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2001,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2002,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2003,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2004,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2005,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2006,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2007,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2008,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2009,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2010,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2011,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2012,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2013,1846.7,geothermal,0.8,12.9416736,PHL
+Philippines,2014,1916.1,geothermal,0.8,13.4280288,PHL
+Philippines,2015,1916.1,geothermal,0.8,13.4280288,PHL
+Philippines,2016,1916.1,geothermal,0.8,13.4280288,PHL
+Philippines,2017,1916.1,geothermal,0.8,13.4280288,PHL
+Philippines,2018,1928.1,geothermal,0.8,13.5121248,PHL
+Philippines,2019,1928.1,geothermal,0.8,13.5121248,PHL
+Philippines,2020,1928.1,geothermal,0.8,13.5121248,PHL
+Philippines,2021,1928.1,geothermal,0.8,13.5121248,PHL
+Philippines,2022,1932.0,geothermal,0.8,13.539456,PHL
+Philippines,2023,1951.8,geothermal,0.8,13.6782144,PHL
+Philippines,2024,1951.8,geothermal,0.8,13.6782144,PHL
+Portugal,2000,14.0,geothermal,0.8,0.098112,PRT
+Portugal,2001,14.0,geothermal,0.8,0.098112,PRT
+Portugal,2002,14.0,geothermal,0.8,0.098112,PRT
+Portugal,2003,14.0,geothermal,0.8,0.098112,PRT
+Portugal,2004,14.0,geothermal,0.8,0.098112,PRT
+Portugal,2005,14.0,geothermal,0.8,0.098112,PRT
+Portugal,2006,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2007,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2008,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2009,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2010,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2011,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2012,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2013,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2014,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2015,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2016,25.0,geothermal,0.8,0.1752,PRT
+Portugal,2017,29.1,geothermal,0.8,0.2039328,PRT
+Portugal,2018,29.1,geothermal,0.8,0.2039328,PRT
+Portugal,2019,29.1,geothermal,0.8,0.2039328,PRT
+Portugal,2020,29.1,geothermal,0.8,0.2039328,PRT
+Portugal,2021,29.1,geothermal,0.8,0.2039328,PRT
+Portugal,2022,29.1,geothermal,0.8,0.2039328,PRT
+Portugal,2023,29.1,geothermal,0.8,0.2039328,PRT
+Portugal,2024,29.1,geothermal,0.8,0.2039328,PRT
+Romania,2014,0.05,geothermal,0.8,0.0003504,ROU
+Romania,2015,0.05,geothermal,0.8,0.0003504,ROU
+Romania,2016,0.05,geothermal,0.8,0.0003504,ROU
+Romania,2017,0.05,geothermal,0.8,0.0003504,ROU
+Romania,2018,0.05,geothermal,0.8,0.0003504,ROU
+Romania,2019,0.05,geothermal,0.8,0.0003504,ROU
+Romania,2020,0.05,geothermal,0.8,0.0003504,ROU
+Romania,2021,0.05,geothermal,0.8,0.0003504,ROU
+Russia,2000,23.0,geothermal,0.8,0.161184,RUS
+Russia,2001,21.0,geothermal,0.8,0.147168,RUS
+Russia,2002,70.0,geothermal,0.8,0.49056,RUS
+Russia,2003,70.0,geothermal,0.8,0.49056,RUS
+Russia,2004,56.0,geothermal,0.8,0.3924480000000001,RUS
+Russia,2005,79.0,geothermal,0.8,0.553632,RUS
+Russia,2006,87.0,geothermal,0.8,0.6096960000000001,RUS
+Russia,2007,90.0,geothermal,0.8,0.63072,RUS
+Russia,2008,80.0,geothermal,0.8,0.56064,RUS
+Russia,2009,81.0,geothermal,0.8,0.567648,RUS
+Russia,2010,81.0,geothermal,0.8,0.567648,RUS
+Russia,2011,81.0,geothermal,0.8,0.567648,RUS
+Russia,2012,81.0,geothermal,0.8,0.567648,RUS
+Russia,2013,79.0,geothermal,0.8,0.553632,RUS
+Russia,2014,74.0,geothermal,0.8,0.518592,RUS
+Russia,2015,74.0,geothermal,0.8,0.518592,RUS
+Russia,2016,74.0,geothermal,0.8,0.518592,RUS
+Russia,2017,74.0,geothermal,0.8,0.518592,RUS
+Russia,2018,74.0,geothermal,0.8,0.518592,RUS
+Russia,2019,81.4,geothermal,0.8,0.5704512,RUS
+Russia,2020,81.4,geothermal,0.8,0.5704512,RUS
+Russia,2021,81.4,geothermal,0.8,0.5704512,RUS
+Russia,2022,81.4,geothermal,0.8,0.5704512,RUS
+Russia,2023,81.4,geothermal,0.8,0.5704512,RUS
+Russia,2024,81.4,geothermal,0.8,0.5704512,RUS
+Taiwan,2018,0.03,geothermal,0.8,0.00021024,TWN
+Taiwan,2019,0.3,geothermal,0.8,0.0021024,TWN
+Taiwan,2020,0.3,geothermal,0.8,0.0021024,TWN
+Taiwan,2021,4.5,geothermal,0.8,0.031536,TWN
+Taiwan,2022,4.999,geothermal,0.8,0.035032992,TWN
+Taiwan,2023,7.289,geothermal,0.8,0.051081312,TWN
+Taiwan,2024,7.489,geothermal,0.8,0.052482912,TWN
+Thailand,2000,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2001,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2002,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2003,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2004,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2005,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2006,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2007,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2008,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2009,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2010,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2011,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2012,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2013,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2014,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2015,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2016,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2017,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2018,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2019,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2020,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2021,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2022,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2023,0.3,geothermal,0.8,0.0021024,THA
+Thailand,2024,0.3,geothermal,0.8,0.0021024,THA
+Turkey,2000,18.0,geothermal,0.8,0.126144,TUR
+Turkey,2001,18.0,geothermal,0.8,0.126144,TUR
+Turkey,2002,18.0,geothermal,0.8,0.126144,TUR
+Turkey,2003,15.0,geothermal,0.8,0.10512,TUR
+Turkey,2004,15.0,geothermal,0.8,0.10512,TUR
+Turkey,2005,15.0,geothermal,0.8,0.10512,TUR
+Turkey,2006,23.0,geothermal,0.8,0.161184,TUR
+Turkey,2007,23.0,geothermal,0.8,0.161184,TUR
+Turkey,2008,30.0,geothermal,0.8,0.21024,TUR
+Turkey,2009,77.0,geothermal,0.8,0.539616,TUR
+Turkey,2010,94.0,geothermal,0.8,0.658752,TUR
+Turkey,2011,114.0,geothermal,0.8,0.798912,TUR
+Turkey,2012,162.0,geothermal,0.8,1.135296,TUR
+Turkey,2013,311.0,geothermal,0.8,2.179488,TUR
+Turkey,2014,405.0,geothermal,0.8,2.83824,TUR
+Turkey,2015,624.0,geothermal,0.8,4.372992,TUR
+Turkey,2016,821.0,geothermal,0.8,5.753568000000001,TUR
+Turkey,2017,1063.7,geothermal,0.8,7.454409600000001,TUR
+Turkey,2018,1282.518,geothermal,0.8,8.987886143999999,TUR
+Turkey,2019,1514.688,geothermal,0.8,10.614933504,TUR
+Turkey,2020,1613.188,geothermal,0.8,11.305221504,TUR
+Turkey,2021,1676.17,geothermal,0.8,11.74659936,TUR
+Turkey,2022,1691.338,geothermal,0.8,11.852896704,TUR
+Turkey,2023,1691.338,geothermal,0.8,11.852896704,TUR
+Turkey,2024,1734.338,geothermal,0.8,12.154240704,TUR
+United States,2000,2793.0,geothermal,0.8,19.573344,USA
+United States,2001,2216.0,geothermal,0.8,15.529728000000002,USA
+United States,2002,2252.0,geothermal,0.8,15.782016000000002,USA
+United States,2003,2133.0,geothermal,0.8,14.948064,USA
+United States,2004,2152.0,geothermal,0.8,15.081216,USA
+United States,2005,2285.0,geothermal,0.8,16.01328,USA
+United States,2006,2274.0,geothermal,0.8,15.936192,USA
+United States,2007,2214.0,geothermal,0.8,15.515712,USA
+United States,2008,2229.0,geothermal,0.8,15.620832,USA
+United States,2009,2382.0,geothermal,0.8,16.693056000000002,USA
+United States,2010,2405.0,geothermal,0.8,16.85424,USA
+United States,2011,2409.0,geothermal,0.8,16.882272,USA
+United States,2012,2592.0,geothermal,0.8,18.164736,USA
+United States,2013,2607.0,geothermal,0.8,18.269856,USA
+United States,2014,2514.0,geothermal,0.8,17.618112,USA
+United States,2015,2542.0,geothermal,0.8,17.814336,USA
+United States,2016,2517.0,geothermal,0.8,17.639136,USA
+United States,2017,2483.3,geothermal,0.8,17.402966400000004,USA
+United States,2018,2444.3,geothermal,0.8,17.129654400000003,USA
+United States,2019,2555.4,geothermal,0.8,17.908243200000005,USA
+United States,2020,2571.9,geothermal,0.8,18.0238752,USA
+United States,2021,2596.7,geothermal,0.8,18.1976736,USA
+United States,2022,2648.6,geothermal,0.8,18.5613888,USA
+United States,2023,2695.8,geothermal,0.8,18.8921664,USA
+United States,2024,2725.0,geothermal,0.8,19.0968,USA
