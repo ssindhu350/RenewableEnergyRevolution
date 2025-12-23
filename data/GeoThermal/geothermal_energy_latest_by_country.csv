@@ -1,0 +1,33 @@
+country,year,capacity_mw,technology,capacity_factor,twh_per_year,country_code
+Argentina,2008,0.6,geothermal,0.8,0.0042048,ARG
+Australia,2024,0.1,geothermal,0.8,0.0007008000000000002,AUS
+Austria,2024,0.25,geothermal,0.8,0.001752,AUT
+Chile,2024,83.58,geothermal,0.8,0.58572864,CHL
+China,2024,25.75,geothermal,0.8,0.180456,CHN
+Costa Rica,2024,262.66,geothermal,0.8,1.8407212800000003,CRI
+Croatia,2024,10.0,geothermal,0.8,0.07008,HRV
+El Salvador,2024,209.4,geothermal,0.8,1.4674752000000002,SLV
+Ethiopia,2024,7.3,geothermal,0.8,0.0511584,ETH
+France,2024,16.15,geothermal,0.8,0.1131792,FRA
+Germany,2024,44.0,geothermal,0.8,0.308352,DEU
+Guadeloupe,2024,14.5,geothermal,0.8,0.10161600000000001,GLP
+Guatemala,2024,49.2,geothermal,0.8,0.34479360000000003,GTM
+Honduras,2024,39.0,geothermal,0.8,0.273312,HND
+Hungary,2024,3.0,geothermal,0.8,0.021024000000000004,HUN
+Iceland,2024,787.58,geothermal,0.8,5.51936064,ISL
+Indonesia,2024,2638.8,geothermal,0.8,18.492710400000004,IDN
+Italy,2024,771.79,geothermal,0.8,5.40870432,ITA
+Japan,2024,489.054,geothermal,0.8,3.427290432,JPN
+Kenya,2024,939.73,geothermal,0.8,6.585627840000001,KEN
+Mexico,2024,998.5,geothermal,0.8,6.997488000000001,MEX
+New Zealand,2024,1275.4,geothermal,0.8,8.9380032,NZL
+Nicaragua,2024,165.44,geothermal,0.8,1.15940352,NIC
+Papua New Guinea,2024,51.0,geothermal,0.8,0.35740800000000006,PNG
+Philippines,2024,1951.8,geothermal,0.8,13.6782144,PHL
+Portugal,2024,29.1,geothermal,0.8,0.20393280000000003,PRT
+Romania,2021,0.05,geothermal,0.8,0.0003504000000000001,ROU
+Russia,2024,81.4,geothermal,0.8,0.5704512,RUS
+Taiwan,2024,7.489,geothermal,0.8,0.05248291200000001,TWN
+Thailand,2024,0.3,geothermal,0.8,0.0021024,THA
+Turkey,2024,1734.338,geothermal,0.8,12.154240704000001,TUR
+United States,2024,2725.0,geothermal,0.8,19.0968,USA
