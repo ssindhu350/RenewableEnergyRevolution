@@ -23,9 +23,8 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = "localhost"
 
 # --- 1. Data Loading ---
-joined_files = os.path.join("C:\RenewableEnergyAI\RenewableEnergyRevolution\data\World_Production", "*.csv")
-list_of_dfs = [pd.read_csv(filename) for filename in glob.glob(joined_files)]
-combined_df = pd.concat(list_of_dfs, ignore_index=True)
+CSV_File = r"C:\RenewableEnergyAI\RenewableEnergyRevolution\data\ISOCodes\iso-country-codes.csv"
+combined_df = pd.read_csv(CSV_File)
 
 # data = pd.DataFrame(combined_df_worldcons)
 
@@ -63,7 +62,7 @@ def get_embeddings_gemini(text_list, batch_size=90):
     return all_embeddings
             
 # Generate embeddings (using 'Country' as the source text)
-combined_df['embedding'] = get_embeddings_gemini(combined_df['Country'].astype(str).tolist())
+combined_df['embedding'] = get_embeddings_gemini(combined_df['country'].astype(str).tolist())
 
 # Crucial: Format the embedding list into a Postgres-friendly string format: [0.1, 0.2, ...]
 combined_df['embedding'] = combined_df['embedding'].apply(lambda x: str(x).replace(' ', ''))
@@ -110,4 +109,4 @@ def psql_bulk_copy(df, table_name):
         conn.close()
 
 # Execute Bulk Import
-psql_bulk_copy(combined_df, 'worldproduction')
+psql_bulk_copy(combined_df, 'isocodes')
