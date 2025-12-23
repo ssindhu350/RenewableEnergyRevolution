@@ -2,12 +2,26 @@ import pandas as pd
 import os
 import glob
 import psycopg2
-from sqlalchemy import create_engine
+import io
+from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
+from google import genai
+from google.genai import types
 
-# Load environment variables (e.g., GOOGLE_API_KEY)
+# Load environment variables
 load_dotenv()
 
+# --- Configuration ---
+client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+EMBEDDING_MODEL = "models/text-embedding-004" 
+VECTOR_DIMENSION = 768 
+
+# Database Connection Details
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = "localhost"
+DB_PORT = "5432"
 
 joined_files = os.path.join("C:\RenewableEnergyAI\RenewableEnergyRevolution\data\countrywise", "*.csv")
 joined_list = glob.glob(joined_files)
@@ -23,13 +37,6 @@ combined_df = pd.concat(list_of_dfs, ignore_index=True)
 # print(combined_df.describe())
 # print(data.shape)
 # print(len(data))
-
-# --- Database Connection Details ---
-DB_NAME = os.getenv("DB_NAME")
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_HOST = "localhost"
-DB_PORT = "5432"
 
 # --- Data Transformation / ETL ---
 col_interested = ['country','iso_code','year', \
@@ -74,28 +81,92 @@ col_interested = ['country','iso_code','year', \
                   'wind_share_energy',\
                   'wind_consumption',]
 
-renew_data = combined_df[col_interested]
-
-# print(renew_data.head())
-# print(renew_data.shape)
+renew_data = combined_df[col_interested].copy()
 
 
-# --- Connect to PostgreSQL and Read Sample Data ---
-conn = psycopg2.connect(host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASSWORD)
-conn_string = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'
-db_engine = create_engine(conn_string)
+# --- 2. Batch Embedding Generation (Gemini) ---
+def get_embeddings_gemini(text_list, batch_size=100):
+    """
+    Fetches embeddings using Google Gemini. 
+    Note: Gemini has a limit on the number of strings per request (typically 100).
+    """
+    all_embeddings = []
+    for i in range(0, len(text_list), batch_size):
+        batch = text_list[i : i + batch_size]
+        print(f"Embedding batch {i} to {i + len(batch)}...")
+        # Using the new SDK client structure
+        try:
+            result = client.models.embed_content(
+                model=EMBEDDING_MODEL,
+                contents=batch,
+                config=types.EmbedContentConfig(
+                    task_type="RETRIEVAL_DOCUMENT",
+                    output_dimensionality=VECTOR_DIMENSION
+                )
+            )
+            # The new SDK returns a list of embedding objects
+            all_embeddings.extend([e.values for e in result.embeddings])
+        except Exception as e:
+            print(f"Error at batch {i}: {e}")
+            all_embeddings.extend([[0.0] * VECTOR_DIMENSION] * len(batch))
+    return all_embeddings
+            
+# Generate embeddings (using 'Country' as the source text)
+# renew_data['embedding'] = get_embeddings_gemini(renew_data['country'].astype(str).tolist())
 
-# --- Import DataFrame into PostgreSQL ---
-try:    
-    print(f"Please Truncate table before running twice.")
-    renew_data.to_sql('allcountryenergy', db_engine, if_exists='append', index=False)
-    print(f"Successfully imported data from CSVs into '{'allcountryenergy'}' table.")
-    select_query = f"SELECT * from allcountryenergy WHERE country = 'India' LIMIT 5;"
-    df= pd.read_sql(select_query, db_engine)
-    print(df.head())
-except Exception as e:
-    print(f"Error importing data: {e}")
+# Crucial: Format the embedding list into a Postgres-friendly string format: [0.1, 0.2, ...]
+# renew_data['embedding'] = renew_data['embedding'].apply(lambda x: str(x).replace(' ', ''))
 
-# Optional: Close the connection
-db_engine.dispose()
-conn.close()
+# Use .loc for the safest way to assign a new column
+print("Generating embeddings...")
+renew_data.loc[:, 'embedding'] = get_embeddings_gemini(renew_data['country'].astype(str).tolist())
+
+# CRITICAL FIX: Convert vector to string and remove all spaces
+# Postgres vector type hates spaces inside the brackets like [0.1, 0.2]
+renew_data.loc[:, 'embedding'] = renew_data['embedding'].apply(lambda x: "[" + ",".join(map(str, x)) + "]")
+
+
+# --- 3. PSQL Bulk Import Function ---
+def psql_bulk_copy(df, table_name):
+    # Establish raw psycopg2 connection for COPY command
+    conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)
+    cursor = conn.cursor()
+    
+    try:
+        # Prepare the table
+        cursor.execute("CREATE EXTENSION IF NOT EXISTS vector;")
+        cursor.execute(f"Truncate TABLE {table_name};")
+        
+        # Build dynamic CREATE TABLE string based on DataFrame columns
+        # We ensure the 'embedding' column is typed as vector(1536)
+        col_types = []
+        for col in df.columns:
+            if col == 'embedding':
+                col_types.append(f'"{col}" vector({VECTOR_DIMENSION})')
+            else:
+                col_types.append(f'"{col}" TEXT') # Defaulting to text for CSV data
+        
+        # cursor.execute(f"CREATE TABLE {table_name} ({', '.join(col_types)});")
+
+        # Create an in-memory string buffer (virtual CSV file)
+        buffer = io.StringIO()
+        df.to_csv(buffer, index=False, header=False, sep=',', quoting=1)
+        buffer.seek(0)
+        
+        # Execute the COPY command (much faster than to_sql)
+        print(f"Starting bulk copy of {len(df)} rows...")
+        copy_sql = f"COPY {table_name} FROM STDIN WITH (FORMAT CSV, DELIMITER '|', QUOTE '\"');"
+        cursor.copy_expert(copy_sql, buffer)
+        
+        conn.commit()
+        print(f"Bulk import to '{table_name}' completed successfully.")
+        
+    except Exception as e:
+        conn.rollback()
+        print(f"Bulk copy failed: {e}")
+    finally:
+        cursor.close()
+        conn.close()
+
+# Execute Bulk Import
+psql_bulk_copy(combined_df, 'allcountryenergy')
