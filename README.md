@@ -60,4 +60,9 @@ CREATE EXTENSION vector;
 ### SQL Scripts
 
 Run the sql scripts in the sql folder. Only to create the tables.
-We run python scripts to embed and load to the tables
+
+### Python scripts
+
+We run python scripts to embed and load to the tables.
+run reguired pip installs.
+Please add your Google API KEY to your .env file
