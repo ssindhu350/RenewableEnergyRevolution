@@ -57,4 +57,7 @@ Enable the extension (do this once in each database where you want to use it)
 ```tsql
 CREATE EXTENSION vector;
 ```
+### SQL Scripts
 
+Run the sql scripts in the sql folder. Only to create the tables.
+We run python scripts to embed and load to the tables
