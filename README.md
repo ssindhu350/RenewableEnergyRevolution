@@ -61,6 +61,20 @@ CREATE EXTENSION vector;
 
 Run the sql scripts in the sql folder. Only to create the tables.
 
+```tsql
+CREATE DATABASE energyDB
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LOCALE_PROVIDER = 'libc'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+COMMENT ON DATABASE energyDB
+    IS 'Database for world's energy generation, production and consumption.';
+
+```
+
 ### Python scripts
 
 We run python scripts to embed and load to the tables.
