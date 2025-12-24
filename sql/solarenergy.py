@@ -87,7 +87,7 @@ def add_embeddings_to_db():
     cur = conn.cursor()
 
     try:
-        # 1. Prepare the table for vectors
+        # 1. Prepare the allcountrysolarconsumption for vectors
         cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
         cur.execute("ALTER TABLE allcountrysolarconsumption ADD COLUMN IF NOT EXISTS embedding vector(768);")
         conn.commit()
@@ -96,7 +96,7 @@ def add_embeddings_to_db():
         cur.execute("SELECT DISTINCT country FROM allcountrysolarconsumption WHERE embedding IS NULL;")
         countries = [row[0] for row in cur.fetchall()]
 
-        # 3. Generate and Update in batches
+        # 3. Generate and Update in batches for allcountrysolarconsumption
         batch_size = 50
         for i in range(0, len(countries), batch_size):
             batch = countries[i:i+batch_size]
@@ -114,6 +114,63 @@ def add_embeddings_to_db():
                 )
             conn.commit()
             print(f"Updated embeddings for {i + len(batch)} countries...")
+            
+        # 1. Prepare the allcountrysolarproduction for vectors
+        cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
+        cur.execute("ALTER TABLE allcountrysolarproduction ADD COLUMN IF NOT EXISTS embedding vector(768);")
+        conn.commit()
+
+        # 2. Fetch distinct countries that need embeddings
+        cur.execute("SELECT DISTINCT Country FROM allcountrysolarproduction WHERE embedding IS NULL;")
+        countries = [row[0] for row in cur.fetchall()]
+
+        # 3. Generate and Update in batches for allcountrysolarproduction
+        batch_size = 50
+        for i in range(0, len(countries), batch_size):
+            batch = countries[i:i+batch_size]
+            res = client.models.embed_content(
+                model="text-embedding-004",
+                contents=batch,
+                config=types.EmbedContentConfig(task_type="RETRIEVAL_DOCUMENT", output_dimensionality=768)
+            )
+            
+            for country, emb_obj in zip(batch, res.embeddings):
+                # Update all rows for this country
+                cur.execute(
+                    "UPDATE allcountrysolarproduction SET embedding = %s WHERE Country = %s;",
+                    (emb_obj.values, country)
+                )
+            conn.commit()
+            print(f"Updated embeddings for {i + len(batch)} countries...")
+        
+        # 1. Prepare the allcountrysolarinvestments for vectors
+        cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
+        cur.execute("ALTER TABLE allcountrysolarinvestment ADD COLUMN IF NOT EXISTS embedding vector(768);")
+        conn.commit()
+
+        # 2. Fetch distinct countries that need embeddings
+        cur.execute("SELECT DISTINCT country FROM allcountrysolarinvestment WHERE embedding IS NULL;")
+        countries = [row[0] for row in cur.fetchall()]
+
+        # 3. Generate and Update in batches for allcountrysolarinvestments
+        batch_size = 50
+        for i in range(0, len(countries), batch_size):
+            batch = countries[i:i+batch_size]
+            res = client.models.embed_content(
+                model="text-embedding-004",
+                contents=batch,
+                config=types.EmbedContentConfig(task_type="RETRIEVAL_DOCUMENT", output_dimensionality=768)
+            )
+            
+            for country, emb_obj in zip(batch, res.embeddings):
+                # Update all rows for this country
+                cur.execute(
+                    "UPDATE allcountrysolarinvestment SET embedding = %s WHERE country = %s;",
+                    (emb_obj.values, country)
+                )
+            conn.commit()
+            print(f"Updated embeddings for {i + len(batch)} countries...")
+        
 
     finally:
         cur.close()
