@@ -3,7 +3,6 @@ import os
 import glob
 import psycopg2
 import io
-from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types

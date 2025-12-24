@@ -1,9 +1,7 @@
 import pandas as pd
 import os
-import glob
 import psycopg2
 import io
-from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -24,25 +22,58 @@ DB_HOST = "localhost"
 
 def import_data():
     # --- 1. Data Loading ---
-    CSV_File = r"C:\RenewableEnergyAI\RenewableEnergyRevolution\data\SolarEnergy\solar_electricity_by_country_consumption.csv"
-    raw_df = pd.read_csv(CSV_File)
+    CSV_File_cons = r"C:\RenewableEnergyAI\RenewableEnergyRevolution\data\SolarEnergy\solar_electricity_by_country_consumption.csv"
+    raw_cons_df = pd.read_csv(CSV_File_cons)
+    
+    CSV_File_prod = r"C:\RenewableEnergyAI\RenewableEnergyRevolution\data\SolarEnergy\solar_energy_by_country_production.csv"
+    raw_prod_df = pd.read_csv(CSV_File_prod)
+    
+    CSV_File_invst = r"C:\RenewableEnergyAI\RenewableEnergyRevolution\data\SolarEnergy\solar_energy_with_investments_TWh.csv"
+    raw_invst_df = pd.read_csv(CSV_File_invst)
     
     # 2. Bulk Copy to Postgres
     conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)
     cur = conn.cursor()
     try:
+        # Drop and recreate allcountrysolarconsumption to ensure it's clean
         cur.execute("DROP TABLE IF EXISTS allcountrysolarconsumption;")
         # Create table with only text/numeric columns
-        cols_sql = ", ".join([f'"{c}" TEXT' for c in raw_df.columns])
+        cols_sql = ", ".join([f'"{c}" TEXT' for c in raw_cons_df.columns])
         cur.execute(f"CREATE TABLE allcountrysolarconsumption ({cols_sql});")
 
         buffer = io.StringIO()
-        raw_df.to_csv(buffer, index=False, header=False, sep='|')
+        raw_cons_df.to_csv(buffer, index=False, header=False, sep='|')
         buffer.seek(0)
         
         cur.copy_expert("COPY allcountrysolarconsumption FROM STDIN WITH (FORMAT CSV, DELIMITER '|');", buffer)
         conn.commit()
-        print("Raw data import successful.")
+
+        # Drop and recreate allcountrysolarproduction to ensure it's clean
+        cur.execute("DROP TABLE IF EXISTS allcountrysolarproduction;")
+        # Create table with only text/numeric columns
+        cols_sql = ", ".join([f'"{c}" TEXT' for c in raw_prod_df.columns])
+        cur.execute(f"CREATE TABLE allcountrysolarproduction ({cols_sql});")
+
+        buffer = io.StringIO()
+        raw_prod_df.to_csv(buffer, index=False, header=False, sep='|')
+        buffer.seek(0)
+        
+        cur.copy_expert("COPY allcountrysolarproduction FROM STDIN WITH (FORMAT CSV, DELIMITER '|');", buffer)
+        conn.commit()
+
+        # Drop and recreate allcountrysolarinvestment to ensure it's clean
+        cur.execute("DROP TABLE IF EXISTS allcountrysolarinvestment;")
+        # Create table with only text/numeric columns
+        cols_sql = ", ".join([f'"{c}" TEXT' for c in raw_invst_df.columns])
+        cur.execute(f"CREATE TABLE allcountrysolarinvestment ({cols_sql});")
+
+        buffer = io.StringIO()
+        raw_invst_df.to_csv(buffer, index=False, header=False, sep='|')
+        buffer.seek(0)
+        
+        cur.copy_expert("COPY allcountrysolarinvestment FROM STDIN WITH (FORMAT CSV, DELIMITER '|');", buffer)
+        conn.commit()
+        print("Raw data Solar Energy import successful.")
     finally:
         cur.close()
         conn.close()
