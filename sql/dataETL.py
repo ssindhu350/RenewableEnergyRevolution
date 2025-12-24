@@ -23,10 +23,14 @@ DB_HOST = "localhost"
 DB_PORT = "5432"
 
 def import_raw_data():
-    # 1. Load Data
+    # Load Data from CSVs
     path = r"C:\RenewableEnergyAI\RenewableEnergyRevolution\data\countrywise"
     all_files = glob.glob(os.path.join(path, "*.csv"))
     df = pd.concat((pd.read_csv(f) for f in all_files), ignore_index=True)
+    
+    # Loading ISO Codes
+    CSV_File = r"C:\RenewableEnergyAI\RenewableEnergyRevolution\data\ISOCodes\iso-country-codes.csv"
+    isocodes_df = pd.read_csv(CSV_File)
     
     # Select your columns (excluding embedding for now)
     col_interested = ['iso_code','country','year', \
@@ -76,6 +80,7 @@ def import_raw_data():
     conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)
     cur = conn.cursor()
     try:
+        # Drop and create table for AllCountryEnergy
         cur.execute("DROP TABLE IF EXISTS allcountryenergy;")
         # Create table with only text/numeric columns
         cols_sql = ", ".join([f'"{c}" TEXT' for c in raw_df.columns])
@@ -87,7 +92,22 @@ def import_raw_data():
         
         cur.copy_expert("COPY allcountryenergy FROM STDIN WITH (FORMAT CSV, DELIMITER '|');", buffer)
         conn.commit()
+        
+        # Drop and create table for isocodes 
+        cur.execute("DROP TABLE IF EXISTS isocodes;")
+        # Create table with only text/numeric columns
+        cols_sql = ", ".join([f'"{c}" TEXT' for c in isocodes_df.columns])
+        cur.execute(f"CREATE TABLE isocodes ({cols_sql});")
+
+        buffer = io.StringIO()
+        isocodes_df.to_csv(buffer, index=False, header=False, sep='|')
+        buffer.seek(0)
+        
+        cur.copy_expert("COPY isocodes FROM STDIN WITH (FORMAT CSV, DELIMITER '|');", buffer)
+        conn.commit()
+        
         print("Raw data import successful.")
+    
     finally:
         cur.close()
         conn.close()
@@ -101,6 +121,33 @@ def add_embeddings_to_db():
 
     try:
         # 1. Prepare the table for vectors
+        cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
+        cur.execute("ALTER TABLE isocodes ADD COLUMN IF NOT EXISTS embedding vector(768);")
+        conn.commit()
+
+        # 2. Fetch distinct countries that need embeddings
+        cur.execute("SELECT DISTINCT country FROM isocodes WHERE embedding IS NULL;")
+        countries = [row[0] for row in cur.fetchall()]
+
+        # 3. Generate and Update in batches
+        batch_size = 50
+        for i in range(0, len(countries), batch_size):
+            batch = countries[i:i+batch_size]
+            res = client.models.embed_content(
+                model="text-embedding-004",
+                contents=batch,
+                config=types.EmbedContentConfig(task_type="RETRIEVAL_DOCUMENT", output_dimensionality=768)
+            )
+            
+            for country, emb_obj in zip(batch, res.embeddings):
+                # Update all rows for this country
+                cur.execute(
+                    "UPDATE isocodes SET embedding = %s WHERE country = %s;",
+                    (emb_obj.values, country)
+                )
+            conn.commit()
+            
+            # 1. Prepare the table for vectors
         cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
         cur.execute("ALTER TABLE allcountryenergy ADD COLUMN IF NOT EXISTS embedding vector(768);")
         conn.commit()
@@ -126,6 +173,8 @@ def add_embeddings_to_db():
                     (emb_obj.values, country)
                 )
             conn.commit()
+            
+            
             print(f"Updated embeddings for {i + len(batch)} countries...")
 
     finally:
