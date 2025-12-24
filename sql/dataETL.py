@@ -23,23 +23,14 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = "localhost"
 DB_PORT = "5432"
 
-joined_files = os.path.join("C:\RenewableEnergyAI\RenewableEnergyRevolution\data\countrywise", "*.csv")
-joined_list = glob.glob(joined_files)
-
-    # Using a list comprehension
-list_of_dfs = [pd.read_csv(filename) for filename in joined_list]
-combined_df = pd.concat(list_of_dfs, ignore_index=True)
-
-# data = pd.DataFrame(combined_df)
-
-# print(combined_df.head())
-# print(combined_df.info())
-# print(combined_df.describe())
-# print(data.shape)
-# print(len(data))
-
-# --- Data Transformation / ETL ---
-col_interested = ['country','iso_code','year', \
+def import_raw_data():
+    # 1. Load Data
+    path = r"C:\RenewableEnergyAI\RenewableEnergyRevolution\data\countrywise"
+    all_files = glob.glob(os.path.join(path, "*.csv"))
+    df = pd.concat((pd.read_csv(f) for f in all_files), ignore_index=True)
+    
+    # Select your columns (excluding embedding for now)
+    col_interested = ['iso_code','country','year', \
                   'biofuel_consumption',\
                   'coal_consumption',\
                   'coal_production',\
@@ -80,93 +71,66 @@ col_interested = ['country','iso_code','year', \
                   'wind_share_elec',\
                   'wind_share_energy',\
                   'wind_consumption',]
+    raw_df = df[col_interested].copy()
 
-renew_data = combined_df[col_interested].copy()
-
-
-# --- 2. Batch Embedding Generation (Gemini) ---
-def get_embeddings_gemini(text_list, batch_size=100):
-    """
-    Fetches embeddings using Google Gemini. 
-    Note: Gemini has a limit on the number of strings per request (typically 100).
-    """
-    all_embeddings = []
-    for i in range(0, len(text_list), batch_size):
-        batch = text_list[i : i + batch_size]
-        print(f"Embedding batch {i} to {i + len(batch)}...")
-        # Using the new SDK client structure
-        try:
-            result = client.models.embed_content(
-                model=EMBEDDING_MODEL,
-                contents=batch,
-                config=types.EmbedContentConfig(
-                    task_type="RETRIEVAL_DOCUMENT",
-                    output_dimensionality=VECTOR_DIMENSION
-                )
-            )
-            # The new SDK returns a list of embedding objects
-            all_embeddings.extend([e.values for e in result.embeddings])
-        except Exception as e:
-            print(f"Error at batch {i}: {e}")
-            all_embeddings.extend([[0.0] * VECTOR_DIMENSION] * len(batch))
-    return all_embeddings
-            
-# Generate embeddings (using 'Country' as the source text)
-# renew_data['embedding'] = get_embeddings_gemini(renew_data['country'].astype(str).tolist())
-
-# Crucial: Format the embedding list into a Postgres-friendly string format: [0.1, 0.2, ...]
-# renew_data['embedding'] = renew_data['embedding'].apply(lambda x: str(x).replace(' ', ''))
-
-# Use .loc for the safest way to assign a new column
-print("Generating embeddings...")
-renew_data.loc[:, 'embedding'] = get_embeddings_gemini(renew_data['country'].astype(str).tolist())
-
-# CRITICAL FIX: Convert vector to string and remove all spaces
-# Postgres vector type hates spaces inside the brackets like [0.1, 0.2]
-renew_data.loc[:, 'embedding'] = renew_data['embedding'].apply(lambda x: "[" + ",".join(map(str, x)) + "]")
-
-
-# --- 3. PSQL Bulk Import Function ---
-def psql_bulk_copy(df, table_name):
-    # Establish raw psycopg2 connection for COPY command
+    # 2. Bulk Copy to Postgres
     conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)
-    cursor = conn.cursor()
-    
+    cur = conn.cursor()
     try:
-        # Prepare the table
-        cursor.execute("CREATE EXTENSION IF NOT EXISTS vector;")
-        cursor.execute(f"Truncate TABLE {table_name};")
-        
-        # Build dynamic CREATE TABLE string based on DataFrame columns
-        # We ensure the 'embedding' column is typed as vector(1536)
-        col_types = []
-        for col in df.columns:
-            if col == 'embedding':
-                col_types.append(f'"{col}" vector({VECTOR_DIMENSION})')
-            else:
-                col_types.append(f'"{col}" TEXT') # Defaulting to text for CSV data
-        
-        # cursor.execute(f"CREATE TABLE {table_name} ({', '.join(col_types)});")
+        cur.execute("DROP TABLE IF EXISTS allcountryenergy;")
+        # Create table with only text/numeric columns
+        cols_sql = ", ".join([f'"{c}" TEXT' for c in raw_df.columns])
+        cur.execute(f"CREATE TABLE allcountryenergy ({cols_sql});")
 
-        # Create an in-memory string buffer (virtual CSV file)
         buffer = io.StringIO()
-        df.to_csv(buffer, index=False, header=False, sep=',', quoting=1)
+        raw_df.to_csv(buffer, index=False, header=False, sep='|')
         buffer.seek(0)
         
-        # Execute the COPY command (much faster than to_sql)
-        print(f"Starting bulk copy of {len(df)} rows...")
-        copy_sql = f"COPY {table_name} FROM STDIN WITH (FORMAT CSV, DELIMITER '|', QUOTE '\"');"
-        cursor.copy_expert(copy_sql, buffer)
-        
+        cur.copy_expert("COPY allcountryenergy FROM STDIN WITH (FORMAT CSV, DELIMITER '|');", buffer)
         conn.commit()
-        print(f"Bulk import to '{table_name}' completed successfully.")
-        
-    except Exception as e:
-        conn.rollback()
-        print(f"Bulk copy failed: {e}")
+        print("Raw data import successful.")
     finally:
-        cursor.close()
+        cur.close()
         conn.close()
 
-# Execute Bulk Import
-psql_bulk_copy(combined_df, 'allcountryenergy')
+import_raw_data()
+
+
+def add_embeddings_to_db():
+    conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)
+    cur = conn.cursor()
+
+    try:
+        # 1. Prepare the table for vectors
+        cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
+        cur.execute("ALTER TABLE allcountryenergy ADD COLUMN IF NOT EXISTS embedding vector(768);")
+        conn.commit()
+
+        # 2. Fetch distinct countries that need embeddings
+        cur.execute("SELECT DISTINCT country FROM allcountryenergy WHERE embedding IS NULL;")
+        countries = [row[0] for row in cur.fetchall()]
+
+        # 3. Generate and Update in batches
+        batch_size = 50
+        for i in range(0, len(countries), batch_size):
+            batch = countries[i:i+batch_size]
+            res = client.models.embed_content(
+                model="text-embedding-004",
+                contents=batch,
+                config=types.EmbedContentConfig(task_type="RETRIEVAL_DOCUMENT", output_dimensionality=768)
+            )
+            
+            for country, emb_obj in zip(batch, res.embeddings):
+                # Update all rows for this country
+                cur.execute(
+                    "UPDATE allcountryenergy SET embedding = %s WHERE country = %s;",
+                    (emb_obj.values, country)
+                )
+            conn.commit()
+            print(f"Updated embeddings for {i + len(batch)} countries...")
+
+    finally:
+        cur.close()
+        conn.close()
+
+add_embeddings_to_db()
